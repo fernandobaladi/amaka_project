@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Producto, Tamano, Categoria, Rol, Usuario, Vendedor, Compania, Carrito, Ingrediente, Transaccion
+from .models import Producto, Usuario, Vendedor, Ingrediente,
 # Register your models here.
 
 class ProductoAdmin(admin.ModelAdmin):
@@ -9,12 +9,12 @@ class UsuarioAdmin(admin.ModelAdmin):
     list_display=('nombre', 'apellido', 'email')
 
 class VendedorAdmin(admin.ModelAdmin):
-    list_display=('nombre', 'apellido')
+    list_display=('nombre', 'proveedor')
 
-class CompaniaAdmin(admin.ModelAdmin):
+class ProveedorAdmin(admin.ModelAdmin):
     list_display=('compania', 'rif')
 
-class TransaccionAdmin(admin.ModelAdmin):
+class PagoAdmin(admin.ModelAdmin):
     list_display = ('fecha', 'numero_de_transaccion')
 
 admin.site.register(Producto, ProductoAdmin)
